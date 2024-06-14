@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>select engg year app by om patil</title>
+	<style>
+	*{font-size:40px;}
+	body{background-color:#C7EA46;}
+	.btn{width:30%}
+	form{border:2px solid black;
+	width:800px;height:550px;padding:20px;
+	box-shadow:0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+	margin:auto;
+	backdrop-filter:blur(10px);	
+	border-radius:30px;
+	background:#7FFF00;
+	display:block;
+	padding:8px;}
+	</style>
+</head>
+<body>
+<center>
+	<h1>Engg Year App</h1>
+	<form onsubmit="show()">
+		<label for="name">Name</label>
+		<input type="text"placeholder="enter your name" id="name"/>
+		</br></br>
+		<label for="year">Select Engg</label>
+		<select id="year">
+		<option
+		value="FE">First Year</option>
+		<option
+		value="SE">Second Year</option>
+		</br></br>
+		<option
+		value="TE">Third Year</option>
+		<option
+		value="BE">Final Year</option>
+
+		</select>
+	</br></br>
+	<input type="submit" class="btn"/>
+
+
+		
+	</form>
+	<h2 id="msg"/>
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			let name=document.getElementById("name");
+			let year=document.getElementById("year");				let msg=document.getElementById("msg");
+
+			if(name.value.trim()=="")
+			{
+				alert("Name Cannot Be Empty");
+				msg.innerHTML="";
+				name.focus();
+				return;
+			}
+
+			
+			let ans = "Name=> " + name.value+ " " + "Year=> "+year.value;
+			msg.innerHTML = ans;
+		}
+	</script>
+</center>
+</body>
+</html>
